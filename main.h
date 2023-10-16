@@ -3,9 +3,9 @@
 
 
 #include <unistd.h>
-#include <stdio.h>
 #include "main.h"
 #include <stdarg.h>
 
 int _putchar(char);
 int _printf(const char *format, ...);
+#endif
