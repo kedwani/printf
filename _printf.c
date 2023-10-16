@@ -3,7 +3,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char *str, *nono = "(null)", a;
+	char *str, *nono = "(null)";
 
 	if (format == NULL)
 		return (0);
