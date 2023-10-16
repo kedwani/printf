@@ -6,7 +6,7 @@ int _printf(const char *format, ...)
 	char *str, *nono = "(null)";
 
 	if (format == NULL)
-		return (-1);
+		return (0);
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; ++i)
 	{
@@ -35,19 +35,15 @@ int _printf(const char *format, ...)
 					}
 				++i;
 			}
-			else if (format[i + 1] == '%')
+			else if (format[i+1]== '%')
 			{
 				_putchar(format[i]);
 			++c;
 			i++;
 			}
-			else if (!format[i + 1])
-				return (-1);
 			else
-			{
-				_putchar(format[i]);
-				c++;
-			}
+			_putchar(format[i]);;
+
 		}
 		else
 		{
