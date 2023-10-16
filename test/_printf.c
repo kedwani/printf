@@ -3,7 +3,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char *str, *nono = "(null)";
+	char *str, *nono = "(null)", a;
 
 	if (format == NULL)
 		return (0);
@@ -14,7 +14,8 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				_putchar(va_arg(ptr, int));
+				a = va_arg(ptr, int);
+				_putchar(a);
 				++c;
 				++i;
 			}
@@ -36,11 +37,9 @@ int _printf(const char *format, ...)
 				++i;
 			}
 		}
-		else
-		{
-			_putchar(va_arg(ptr, int));
-			c++;
-		}
+		a = va_arg(ptr, int);
+		_putchar(a);
+		c++;
 	}
 	va_end(ptr);
 	return (c);

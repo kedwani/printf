@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				char a = va_arg(ptr, int);
+				a = va_arg(ptr, int);
 				_putchar(a);
 				++c;
 				++i;
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				++i;
 			}
 		}
-		char a = va_arg(ptr, int);
+		a = va_arg(ptr, int);
 		_putchar(a);
 		c++;
 	}
