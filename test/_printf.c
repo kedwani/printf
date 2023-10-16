@@ -3,14 +3,14 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char *str, *nono = "(null)", a;
+	char *str, *nono = "(null)";
 
 	if (format == NULL)
 		return (0);
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; ++i)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i+1] != '%')
 		{
 			if (format[i + 1] == 'c')
 			{
@@ -35,9 +35,13 @@ int _printf(const char *format, ...)
 					}
 				++i;
 			}
+			else
+			  break;
+
 		}
 		else
 		{
+
 			_putchar(format[i]);
 			c++;
 		}
