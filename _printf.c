@@ -3,7 +3,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char *str, *nono = "(null)";
+	char *str;
 
 	if (format == NULL)
 		return (0);
@@ -28,11 +28,8 @@ int _printf(const char *format, ...)
 						++c;
 					}
 				else
-					for (j = 0; nono[i] != '\0'; ++j)
-					{
-						_putchar(nono[j]);
+						_putchar('\0');
 						++c;
-					}
 				++i;
 			}
 			else if (format[i+1]== '%')
