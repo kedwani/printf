@@ -3,7 +3,6 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char *str, *nono = "(null)";
 
 	if (format == NULL)
 		return (-1);
@@ -12,37 +11,23 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == 'c')
+			if (!format[i + 1])
+				return (-1);
+			else if (format[i + 1] == 'c')
 			{
-				_putchar(va_arg(ptr, int));
-				++c;
+				c = print_char(va_arg(ptr, int), c);
 				++i;
 			}
 			else if (format[i + 1] == 's')
 			{
-				str = (va_arg(ptr, char*));
-				if (str)
-					for (j = 0; str[j] != '\0'; ++j)
-					{
-						_putchar(str[j]);
-						++c;
-					}
-				else
-					for (j = 0; nono[j] != '\0'; ++j)
-					{
-						_putchar(nono[j]);
-						++c;
-					}
+				c = print_str(va_arg(ptr, char*), c);
 				++i;
 			}
 			else if (format[i + 1] == '%')
 			{
-				_putchar(format[i]);
-			++c;
-			i++;
+				c = print_char(format[i], c);
+				i++;
 			}
-			else if (!format[i + 1])
-				return (-1);
 			else
 				c = print_char(format[i], c);
 		}
