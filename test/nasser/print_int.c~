@@ -1,9 +1,0 @@
-#include "main.h"
-int print_int(int arg, int count)
-{
-int i
-for (i=10;arg/i != 0; i*10)
-{
-putchar();
-		}
-	}
