@@ -1,0 +1,75 @@
+#include <limits.h>
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+    int len;
+    int len2;
+    len = _printf("%d", 1024);
+    len2 = printf("%d", 1024);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%d", -1024);
+    len2 = printf("%d", -1024);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%d", 0);
+    len2 = printf("%d", 0);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%d", INT_MAX);
+    len2 = printf("%d", INT_MAX);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%d", INT_MIN);
+    len2 = printf("%d", INT_MIN);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("There is %d bytes in %d KB\n", 1024, 1);
+    len2 = printf("There is %d bytes in %d KB\n", 1024, 1);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%d - %d = %d\n", 1024, 2048, -1024);
+    len2 = printf("%d - %d = %d\n", 1024, 2048, -1024);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+    len2 = printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%%");
+    len2 = printf("%%");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("Should print a single percent sign: %%\n");
+    len2 = printf("Should print a single percent sign: %%\n");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+    len2 = printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%%");
+    len2 = printf("%%");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("Should print a single percent sign: %%\n");
+    len2 = printf("Should print a single percent sign: %%\n");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+    len2 = printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("css%ccs%scscscs", 'T', "Test");
+    len2 = printf("css%ccs%scscscs", 'T', "Test");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf(NULL);
+    len2 = printf(NULL);
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%c", '\0');
+    len2 = printf("%c", '\0');
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%");
+    len2 = printf("%");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%!\n");
+    len2 = printf("%!\n");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    len = _printf("%K\n");
+    len2 = printf("%K\n");
+    printf("my code = %d and the original code = %d\n",len,len2);
+    return (0);
+}
