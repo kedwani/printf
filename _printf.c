@@ -47,5 +47,5 @@ int _printf(const char *format, ...)
 			c = print_char(format[i], c);
 	}
 	va_end(ptr);
-	return (c)
+	return (c);
 }
