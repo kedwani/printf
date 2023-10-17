@@ -35,26 +35,19 @@ int _printf(const char *format, ...)
 					}
 				++i;
 			}
-			else if (format[i+1]== '%')
+			else if (format[i + 1] == '%')
 			{
 				_putchar(format[i]);
 			++c;
 			i++;
 			}
-			else if (!format[i+1])
+			else if (!format[i + 1])
 				return (-1);
 			else
-			{
-				_putchar(format[i]);
-				c++;
-			}
+				c = print_char(format[i], c);
 		}
 		else
-		{
-
-			_putchar(format[i]);
-			c++;
-		}
+			c = print_char(format[i], c);
 	}
 	va_end(ptr);
 	return (c);

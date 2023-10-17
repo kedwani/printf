@@ -8,4 +8,7 @@
 
 int _putchar(char);
 int _printf(const char *format, ...);
+int print_char(char arg,int count);
+
+
 #endif

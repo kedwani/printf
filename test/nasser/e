@@ -1,3 +1,3 @@
-gcc -c *.c
-gcc *.o -o k
-./k
+git add .
+git commit -m 'auto push'
+git push
