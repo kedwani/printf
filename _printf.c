@@ -20,10 +20,15 @@ int _printf(const char *format, ...)
 		{
 			if (!format[i + 1])
 				return (-1);
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+			{
+				c = print_int(va_arg(ptr, int), c);
+				++i;
+			}
 			else if (format[i + 1] == 'c')
 			{
 				c = print_char(va_arg(ptr, int), c);
-				++i;
+				i++;
 			}
 			else if (format[i + 1] == 's')
 			{
@@ -33,7 +38,7 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == '%')
 			{
 				c = print_char(format[i], c);
-				i++;
+				++i;
 			}
 			else
 				c = print_char(format[i], c);
