@@ -1,4 +1,11 @@
 #include "main.h"
+/**
+ * _printf - : is a modefied function of printf that .
+ *
+ *@format: is the string format
+ *
+ *Return: (number of char printed)
+ */
 int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
