@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, c = 0;
+	int i, c = 0;
 	va_list ptr;
 
 	if (format == NULL)
