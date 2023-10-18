@@ -14,6 +14,13 @@ int dec_to_bin(unsigned int u, int c)
 	int i, j;
 	char b[64];
 
+	if (u == 0)
+	{
+		_putchar('0');
+		_putchar('0');
+		return (c + 2);
+	}
+
 	for (i = 0; u != 0; ++i)
 	{
 		b[i] = u % 2;
@@ -29,6 +36,5 @@ int dec_to_bin(unsigned int u, int c)
 		_putchar(b[j] + '0');
 			c++;
 	}
-
 	return (c);
 }
