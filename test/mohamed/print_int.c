@@ -13,12 +13,12 @@
 int print_int(long int arg, int count)
 {
 	if (arg < 0)
-		{
-			_putchar('-');
-			++count;
-			arg *= -1;
-		}
-	if (arg / 10 != 0)
+	{
+		_putchar('-');
+		++count;
+		arg *= -1;
+	}
+	if (arg >= 10)
 	{
 		count =  (print_int(arg / 10, count));
 	}

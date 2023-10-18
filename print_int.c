@@ -18,7 +18,7 @@ int print_int(long int arg, int count)
 		++count;
 		arg *= -1;
 	}
-	if (arg / 10 != 0)
+	if (arg > 9)
 	{
 		count =  (print_int(arg / 10, count));
 	}
