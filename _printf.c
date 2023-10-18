@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i, c = 0;
 	va_list ptr;
+	char flag = '0';
 
 	if (format == NULL)
 		return (-1);
@@ -20,21 +21,11 @@ int _printf(const char *format, ...)
 		{
 			if (!format[i + 1])
 				return (-1);
-			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-				c = print_int(va_arg(ptr, int), c);
-			else if (format[i + 1] == 'c')
-				c = print_char(va_arg(ptr, int), c);
 			else if (format[i + 1] == 's')
 				c = print_str(va_arg(ptr, char*), c);
-			else if (format[i + 1] == 'b')
-				c = dec_to_bin(va_arg(ptr, int), c);
-			else if (format[i + 1] == '%')
-				c = print_char(format[i], c);
-			else
-			{
-				c = print_char(format[i], c);
-				--i;
-			}
+			c = func_selct(va_arg(ptr, int), format, i, c, flag);
+			if (flag != '0')
+				++i;
 			++i;
 		}
 		else

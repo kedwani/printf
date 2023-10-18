@@ -4,14 +4,19 @@
  *
  *@arg : is the int ot be print
  *@count : is the count of printed chars
- *
+ *@flag:is a flag.
  *Return: (counted chars).
  */
 
 
 
-int print_int(long int arg, int count)
+int print_int(long int arg, int count, char flag)
 {
+	if (flag == '+' && arg >= 0)
+	{
+		_putchar('+');
+		c++;
+	}
 	if (arg < 0)
 	{
 		_putchar('-');
@@ -20,7 +25,7 @@ int print_int(long int arg, int count)
 	}
 	if (arg > 9)
 	{
-		count =  (print_int(arg / 10, count));
+		count =  (print_int(arg / 10, count, flag));
 	}
 	_putchar(arg % 10 + '0');
 	return (count + 1);
