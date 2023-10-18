@@ -31,10 +31,5 @@ int dec_to_bin(unsigned int u, int c)
 		_putchar(b[j] + '0');
 			c++;
 	}
-	for (j = i - 1; j >= 0; --j)
-	{
-		_putchar(b[j] + '0');
-			c++;
-	}
 	return (c);
 }
