@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 				c = print_char(va_arg(ptr, int), c);
 			else if (format[i + 1] == 's')
 				c = print_str(va_arg(ptr, char*), c);
-			else if (format[i + 1] == 'u')
+			else if (format[i + 1] == 'b')
 				c = dec_to_bin(va_arg(ptr, int), c);
 			else if (format[i + 1] == '%')
 				c = print_char(format[i], c);
