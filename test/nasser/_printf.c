@@ -40,6 +40,11 @@ int _printf(const char *format, ...)
 				c = print_char(format[i], c);
 				++i;
 			}
+			else if (format[i + 1] == 'u')
+			{
+				c = converter(va_arg(ptr, int), c);
+				++i;
+			}
 			else
 				c = print_char(format[i], c);
 		}

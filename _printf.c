@@ -21,27 +21,21 @@ int _printf(const char *format, ...)
 			if (!format[i + 1])
 				return (-1);
 			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-			{
 				c = print_int(va_arg(ptr, int), c);
-				++i;
-			}
 			else if (format[i + 1] == 'c')
-			{
 				c = print_char(va_arg(ptr, int), c);
-				i++;
-			}
 			else if (format[i + 1] == 's')
-			{
 				c = print_str(va_arg(ptr, char*), c);
-				++i;
-			}
+			else if (format[i + 1] == 'u')
+				c = dec_to_bin(va_arg(ptr, int), c);
 			else if (format[i + 1] == '%')
+				c = print_char(format[i], c);
+			else
 			{
 				c = print_char(format[i], c);
-				++i;
+				--i;
 			}
-			else
-				c = print_char(format[i], c);
+			++i;
 		}
 		else
 			c = print_char(format[i], c);
