@@ -11,7 +11,7 @@
 
 int dec_to_bin(unsigned int u, int c)
 {
-	int i;
+	int i, flag = 0;
 	char b[] = "00000000000000000000000000000000";
 
 	for (i = 31; i >= 0; --i)
@@ -22,8 +22,13 @@ int dec_to_bin(unsigned int u, int c)
 		}
 	for (i = 0; b[i] != '\0'; ++i)
 	{
-		_putchar(b[i]);
-		c++;
+		if (b[i] == 1)
+			flag = 1;
+		if (flag = 1)
+		{
+			_putchar(b[i]);
+			c++;
+		}
 	}
 	return (c);
 }
