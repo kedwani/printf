@@ -24,7 +24,7 @@ int dec_to_bin(unsigned int u, int c)
 	{
 		if (b[i] == 1)
 			flag = 1;
-		if (flag = 1)
+		if (flag == 1)
 		{
 			_putchar(b[i]);
 			c++;
