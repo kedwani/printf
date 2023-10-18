@@ -17,7 +17,6 @@ int dec_to_bin(unsigned int u, int c)
 	if (u == 0)
 	{
 		_putchar('0');
-		_putchar('0');
 		return (c + 2);
 	}
 
