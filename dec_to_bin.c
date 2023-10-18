@@ -2,15 +2,6 @@
 int dec_to_bin(unsigned int u,int c);
 unsigned int get_power(int num, int power);
 
-int main(void)
-{
-	unsigned int i;
-	_printf("please enter your decimal number to be converted : \n");
-	scanf("%u",&i);
-	_printf("you have entered %d and it is equivlant binary number is %u \n",i,i);
-	return 0;
-}
-
 int dec_to_bin(unsigned int u,int c)
 {
 	int i;
