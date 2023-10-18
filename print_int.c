@@ -23,5 +23,5 @@ int print_int(long int arg, int count)
 		count =  (print_int(arg / 10, count));
 	}
 	_putchar(arg % 10 + '0');
-	return (count);
+	return (count + 1);
 }
