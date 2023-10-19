@@ -1,0 +1,72 @@
+#include "main.h"
+/**
+ * _printf - : is a modefied function of printf that .
+ *
+ *@format: is the string format
+ *
+ *Return: (number of char printed)
+ */
+int _printf(const char *format, ...)
+{
+	int i, j, c = 0;
+	va_list ptr;
+	char str[] = "sSr", spec[] = "cidb", f = 'f',
+		flag = '0', specs[] = "crSibds%";
+
+	if (format == NULL)
+		return (-1);
+	va_start(ptr, format);
+	for (i = 0; format[i] != '\0'; ++i)
+	{
+		if (format[i] == '%')
+		{
+			if (!format[i + 1])
+				return (-1);
+			for (j = 0; spec[j] != '\0'; ++j)
+				if (format[i + 1] == spec[j])
+					c = func_selct(va_arg(ptr, int), format[i + 1], c, flag);
+			for (j = 0; str[j] != '\0'; ++j)
+				if (format[i + 1] == str[j])
+					c = func_selct_str(va_arg(ptr, char*), format[i + 1], c, flag);
+			if (format[i + 1] == '%')
+				c = print_char(format[i], c);
+			for (j = 0; specs[j] != '\0'; ++j)
+				if (format[i + 1] == specs[j])
+					f = 't';
+			if (f == 'f')
+			{
+				c = print_char(format[i], c);
+				c = print_char(format[i + 1], c);
+			}
+			++i;
+		}
+		else
+			c = print_char(format[i], c);
+	}#include <stdio.h>
+		 #include <stdlib.h>
+		 #include "main.h"
+
+		 /**
+		  * main - Entry point
+		  *
+		  * Return: 0 on success, error code otherwise
+		  */
+		 int main(void)
+	 {
+		 int len, len2;
+
+		 len = _printf("%r", "\nThis sentence is retrieved from va_args!");
+		 len2 = printf("!sgra_av morf deveirter si ecnetnes sihT\n");
+		 fflush(stdout);
+		 if (len != len2)
+		 {
+			 printf("Lengths differ.\n");
+			 fflush(stdout);
+			 return (1);
+		 }
+		 return (0);
+	 }
+	~
+	va_end(ptr);
+	return (c);
+}

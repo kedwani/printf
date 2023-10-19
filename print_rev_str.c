@@ -10,15 +10,16 @@
 
 
 int print_rev_str(char *str, int c)
-{
-	int j;
 
-	j = _strlen(str);
-	for (; str[j] >= 0; --j)
+{
+	int i, j;
+
+	for (i = 0; str[i] != '\0'; ++i)
+		;
+	for (j = i - 1; j >= 0; --j)
 	{
 		_putchar(str[j]);
 		++c;
 	}
 	return (c);
-
 }
