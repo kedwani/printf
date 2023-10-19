@@ -12,11 +12,6 @@
 
 int print_int(long int arg, int count, char flag)
 {
-	if (flag == '+' && arg >= 0)
-	{
-		_putchar('+');
-		count++;
-	}
 	if (arg < 0)
 	{
 		_putchar('-');

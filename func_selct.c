@@ -10,7 +10,7 @@
  *Return: always(count).
  **/
 
-int func_selct(char arg, char format, char format2, int c, char f)
+int func_selct(int arg, char format2, int c, char f)
 {
 
 
@@ -20,7 +20,5 @@ int func_selct(char arg, char format, char format2, int c, char f)
 		c = print_char(arg, c);
 	else if (format2 == 'b')
 		c = dec_to_bin(arg, c);
-	else if (format2 == '%')
-		c = print_char(format, c);
 	return (c);
 }

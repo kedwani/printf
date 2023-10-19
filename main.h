@@ -8,7 +8,7 @@
 #include <limits.h>
 #include <stdlib.h>
 
-int func_selct(char, char format, char format2, int c, char flag);
+int func_selct(int, char format2, int c, char flag);
 int _putchar(char);
 int _printf(const char *format, ...);
 int print_char(char arg, int count);
