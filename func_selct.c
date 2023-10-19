@@ -3,39 +3,30 @@
  *func_selct - is a function to select which func to use .
  *@arg : is arg.
  *@format : is formatt.
- *@i :is index.
+ *@format2 : is formatt.
+ *@format3 : is formatt.
  *@c : is count.
- *@flag : is flag.
+ *@f : is flag.
  *
  *Return: always(count).
  **/
 
-int func_selct(int arg, char *format, int  i, int c, char flag)
+int func_selct(int arg, char format, char format2, int c, char f)
 {
 
-else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-	c = print_int(arg, c);
-else if (format[i + 1] == '+' && format[i + 2] == 'd')
-{
-	flag = '+';
-	c = print_int(arg, c, flag);
-}
-else if (format[i + 1] == '+' && format[i + 2] == 'i')
-{
-	flag = '+';
-	c = print_int(arg, c, flag);
-	++i;
-}
 
-else if (format[i + 1] == 'c')
-	c = print_char(arg, c);
-else if (format[i + 1] == 'b')
-	c = dec_to_bin(arg, c);
-else if (format[i + 1] == '%')
-	c = print_char(format[i], c);
-else
-{
-	c = print_char(format[i], c);
-	c = print_char(format[i + 1], c);
+	if (format == 'd' || format2 == 'i')
+		c = print_int(arg, c, f);
+	else if (format2 == 'c')
+		c = print_char(arg, c);
+	else if (format2 == 'b')
+		c = dec_to_bin(arg, c);
+	else if (format2 == '%')
+		c = print_char(format, c);
+	else
+	{
+		c = print_char(format, c);
+		c = print_char(format2, c);
 	}
+	return (c);
 }
