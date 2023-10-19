@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char spec[] = "cidb", f = 't', flag = '0',specs[] = "cibds%";
+	char spec[] = "cidb", f = 'f', flag = '0',specs[] = "cibds%";
 
 	if (format == NULL)
 		return (-1);
