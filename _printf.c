@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == spec[j])
 					c = func_selct(va_arg(ptr, int), format[i + 1], c, flag);
 			for (j = 0; str[j] != '\0'; ++j)
-				if (format[i + 1] == spec[j])
+				if (format[i + 1] == str[j])
 					c = func_selct_str(va_arg(ptr, char*), format[i + 1], c, flag);
 			if (format[i + 1] == '%')
 				c = print_char(format[i], c);

@@ -12,24 +12,13 @@
 int print_rev_str(char *str, int c)
 {
 	int j;
-	char *nono = "(null)";
-	int i;
 
-	if (str)
+	j = _strlen(str);
+	for (; str[j] >= 0; --j)
 	{
-		i = _strlen(str);
-		for (j = i; str[j] >= 0; ++j)
-		{
-			_putchar(str[j]);
-			++c;
-		}
+		_putchar(str[j]);
+		++c;
 	}
-	else
-		for (j = 0; nono[j] != '\0'; ++j)
-		{
-			_putchar(nono[j]);
-			++c;
-		}
 	return (c);
 
 }
