@@ -17,6 +17,8 @@ int print_int(long int arg, int count, char flag);
 int dec_to_bin(unsigned int u, int c);
 int dec_to_hex(int decimalNumber, int c);
 int print_Str(char *str, int c);
-
+int print_rev_str(char *str, int c);
+int func_selct_str(char *arg, char format2, int c, char f);
+int _strlen(char *s);
 
 #endif
