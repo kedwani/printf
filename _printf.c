@@ -31,11 +31,6 @@ int _printf(const char *format, ...)
 				c = print_str(va_arg(ptr, char*), c);
 			else if (format[i + 1] == '%')
 				c = print_char(format[i], c);
-			else
-			{
-				c = print_char(format[i], c);
-				c = print_char(format[i + 1], c);
-			}
 			if (flag != '0')
 				++i;
 			++i;
