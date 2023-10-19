@@ -2,7 +2,6 @@
 /**
  *func_selct - is a function to select which func to use .
  *@arg : is arg.
- *@format : is formatt.
  *@format2 : is formatt.
  *@c : is count.
  *@f : is flag.
