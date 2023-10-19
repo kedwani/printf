@@ -4,7 +4,6 @@
  *@arg : is arg.
  *@format2 : is formatt.
  *@c : is count.
- *@f : is flag.
  *
  *Return: always(count).
  **/

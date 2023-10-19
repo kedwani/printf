@@ -4,7 +4,6 @@
  *
  *@arg : is the int ot be print
  *@count : is the count of printed chars
- *@flag:is a flag.
  *Return: (counted chars).
  */
 
