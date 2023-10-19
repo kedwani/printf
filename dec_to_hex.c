@@ -10,7 +10,7 @@
 int dec_to_hex(int decimalNumber, int c)
 {
 	char hexadecimal[16] = "0123456789ABCDEF";
-	char hexResult[INT_MAX];
+	char hexResult[2000];
 	int index = 0;
 	int remainder, i;
 
@@ -21,6 +21,8 @@ int dec_to_hex(int decimalNumber, int c)
 		decimalNumber /= 16;
 		index++;
 	}
+	_putchar('0');
+	c++;
 	for (i = (index - 1); i >= 0; i--)
 	{
 		_putchar(hexResult[i]);
