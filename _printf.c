@@ -10,8 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char str[] = "sSr", spec[] = "cidb", f = 'f',
-		flag = '0', specs[] = "crSibds%";
+	char str[] = "sSr", spec[] = "cid+b", f = 'f', flag, specs[] = "crSibds+%";
 
 	if (format == NULL)
 		return (-1);
@@ -22,6 +21,8 @@ int _printf(const char *format, ...)
 		{
 			if (!format[i + 1])
 				return (-1);
+			if (format[i + 1] == '+')
+				flag = '+';
 			for (j = 0; spec[j] != '\0'; ++j)
 				if (format[i + 1] == spec[j])
 					c = func_selct(va_arg(ptr, int), format[i + 1], c, flag);
