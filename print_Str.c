@@ -13,11 +13,24 @@ int print_Str(char *str, int c)
 	int j;
 	char *nono = "(null)";
 
+
+
+
 	if (str)
 		for (j = 0; str[j] != '\0'; ++j)
 		{
-			_putchar(str[j]);
-			++c;
+			if ((str[j] > 0 && str[j] < 32) || str[j] >= 127)
+			{
+				_putchar('\\');
+				_putchar('x');
+				c += 2;
+				c = dec_to_hex(str[j], c);
+			}
+			else
+			{
+				_putchar(str[j]);
+				++c;
+			}
 		}
 	else
 		for (j = 0; nono[j] != '\0'; ++j)
