@@ -17,6 +17,8 @@ int func_selct(int arg, char format2, int c, char f)
 		c = print_int(arg, c, f);
 	else if (format2 == 'c')
 		c = print_char(arg, c);
+	else if (format2 == 'x')
+		c = dec_to_hex(arg, c);
 	else if (format2 == 'b')
 		c = dec_to_bin(arg, c);
 	return (c);
