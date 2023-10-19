@@ -8,9 +8,10 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, c = 0;
+	int i, j, c = 0;
 	va_list ptr;
-	char flag = '0';
+	char flag = '0', f = 'f';
+	char spec[] = "cidb";
 
 	if (format == NULL)
 		return (-1);
@@ -22,10 +23,23 @@ int _printf(const char *format, ...)
 			if (!format[i + 1])
 				return (-1);
 			else if (format[i + 1] == 's')
+			{
 				c = print_str(va_arg(ptr, char*), c);
-			else
-				c = func_selct(va_arg(ptr, int), format[i],
-					       format[i + 1], c, flag);
+				f = 't';
+			}
+			for (j = 0; spec[j] != '\0'; ++j)
+				if (format[i + 1] == spec[j])
+				{
+					c = func_selct(va_arg(ptr, int), format[i], format[i + 1], c, flag);
+					f = 't';
+				}
+			if (format[i + 1] == '%')
+				c = print_char(format[i], c);
+			if (f == 'f')
+			{
+				c = print_char(format[i], c);
+				c = print_char(format[i + 1], c);
+			}
 			if (flag != '0')
 				++i;
 			++i;
