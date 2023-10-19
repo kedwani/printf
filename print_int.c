@@ -8,7 +8,7 @@
  *Return: (counted chars).
  */
 
-int print_int(long int arg, int count, char flag)
+int print_int(long int arg, int count)
 {
 	if (arg < 0)
 	{
@@ -18,7 +18,7 @@ int print_int(long int arg, int count, char flag)
 	}
 	if (arg > 9)
 	{
-		count =  (print_int(arg / 10, count, flag));
+		count =  (print_int(arg / 10, count));
 	}
 	_putchar(arg % 10 + '0');
 	return (count + 1);

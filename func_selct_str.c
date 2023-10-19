@@ -9,9 +9,8 @@
  *Return: always(count).
  **/
 
-int func_selct_str(char *arg, char format2, int c, char f)
+int func_selct_str(char *arg, char format2, int c)
 {
-	(void)f;
 	if (format2 == 's')
 		c = print_str(arg, c);
 	if (format2 == 'r')
