@@ -8,8 +8,8 @@
  *Return: always (counter of printed chars)
  */
 
-
-int print_str(char *str, int c)
+/*
+int print_Str(char *str, int c)
 {
 	int j;
 	char *nono = "(null)";
@@ -29,3 +29,4 @@ int print_str(char *str, int c)
 	return (c);
 
 }
+*/
