@@ -21,7 +21,7 @@ int dec_to_hex(int decimalNumber, int c)
 		decimalNumber /= 16;
 		index++;
 	}
-	if (index == 0)
+	if (index == 1)
 	{
 		_putchar('0');
 		c++;
