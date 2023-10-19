@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *print_str -: is a function to print simple string.
+ *print_Str -: is a function to print simple string.
  *
  *@str : is the string tp be printed
  *@c : the count of prevois printed chars to be increment.
@@ -8,7 +8,6 @@
  *Return: always (counter of printed chars)
  */
 
-/*
 int print_Str(char *str, int c)
 {
 	int j;
@@ -29,4 +28,3 @@ int print_Str(char *str, int c)
 	return (c);
 
 }
-*/

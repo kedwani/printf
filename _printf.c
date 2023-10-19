@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, c = 0;
 	va_list ptr;
-	char spec[] = "cidb", f = 'f', flag = '0',specs[] = "cibds%";
+	char spec[] = "cidb", f = 'f', flag = '0', specs[] = "cibds%";
 
 	if (format == NULL)
 		return (-1);
@@ -35,11 +35,10 @@ int _printf(const char *format, ...)
 			for (j = 0; specs[j] != '\0'; ++j)
 				if (format[i + 1] == specs[j])
 					f = 't';
-			if (f == 'f') 				{
-				{
-					c = print_char(format[i], c);
-					c = print_char(format[i + 1], c);
-				}
+			if (f == 'f')
+			{
+				c = print_char(format[i], c);
+				c = print_char(format[i + 1], c);
 			}
 			++i;
 		}
