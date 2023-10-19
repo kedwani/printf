@@ -15,7 +15,7 @@ int func_selct(int arg, char format, char format2, int c, char f)
 {
 
 
-	if (format == 'd' || format2 == 'i')
+	if (format2 == 'd' || format2 == 'i')
 		c = print_int(arg, c, f);
 	else if (format2 == 'c')
 		c = print_char(arg, c);

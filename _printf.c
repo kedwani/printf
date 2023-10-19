@@ -23,8 +23,9 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (format[i + 1] == 's')
 				c = print_str(va_arg(ptr, char*), c);
-			c = func_selct(va_arg(ptr, int), format[i],
-				       format[i + 1], c, flag);
+			else
+				c = func_selct(va_arg(ptr, int), format[i],
+					       format[i + 1], c, flag);
 			if (flag != '0')
 				++i;
 			++i;
