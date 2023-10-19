@@ -21,13 +21,13 @@ int _printf(const char *format, ...)
 		{
 			if (!format[i + 1])
 				return (-1);
-			else if (format[i] != '\0')
+			if (format != NULL)
 				for (j = 0; spec[j] != '\0'; ++j)
 				{
 					if (format[i + 1] == spec[j])
 						c = func_selct(va_arg(ptr, int), format[i], format[i + 1], c, flag);
 				}
-			else if (format[i + 1] == 's')
+			if (format[i + 1] == 's')
 				c = print_str(va_arg(ptr, char*), c);
 			else if (format[i + 1] == '%')
 				c = print_char(format[i], c);
