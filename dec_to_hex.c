@@ -21,8 +21,11 @@ int dec_to_hex(int decimalNumber, int c)
 		decimalNumber /= 16;
 		index++;
 	}
-	_putchar('0');
-	c++;
+	if (index = 0)
+	{
+		_putchar('0');
+		c++;
+	}
 	for (i = (index - 1); i >= 0; i--)
 	{
 		_putchar(hexResult[i]);
