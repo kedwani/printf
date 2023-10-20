@@ -31,4 +31,4 @@ int dec_to_bin(unsigned int u, int c)
 			c++;
 	}
 	return (c);
-
+}
