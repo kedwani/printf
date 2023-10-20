@@ -32,3 +32,4 @@ int dec_to_hex(int decimalNumber, int c)
 		c++;
 	}
 	return (c);
+}
